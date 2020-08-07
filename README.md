@@ -15,7 +15,9 @@ This is a collection of shared data schema definitions across Sentry's services.
 - For consuming JSON Schema in Python,
   [jsonschema-typed](https://github.com/inspera/jsonschema-typed) is
   recommended. It has been found by Snuba devs to produce decent type
-  definitions.
+  definitions. You will likely have to use [the branch of this
+  PR](https://github.com/inspera/jsonschema-typed/pull/1) to make it work with
+  our schemas.
 - For consuming JSON Schema in TypeScript,
   [json-schema-to-typescript](https://github.com/bcherny/json-schema-to-typescript)
   is recomended.
