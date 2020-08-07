@@ -2,10 +2,33 @@
 
 This is a collection of shared data schema definitions across Sentry's services.
 
-If there is a definitive service that owns/produces the schema, it should be
-used as folder name. Otherwise put the schema into `sentry/`.
+## Adding new schemas
 
-## `relay/event.schema.json`
+- If there is a definitive service that owns/produces the schema, it should be
+  used as folder name. Otherwise put the schema into `sentry/`.
+- Bot commits for auto-generated schema updates should reference the commit in
+  the service repo that they were triggered by (e.g. reference commit of Relay
+  master for schema change originating in Relay)
+
+## Consuming schemas
+
+- For consuming JSON Schema in Python,
+  [jsonschema-typed](https://github.com/inspera/jsonschema-typed) is
+  recommended. It has been found by Snuba devs to produce decent type
+  definitions.
+- For consuming JSON Schema in TypeScript,
+  [json-schema-to-typescript](https://github.com/bcherny/json-schema-to-typescript)
+  is recomended.
+- In other situations, setting up something based on
+  [quicktype](https://github.com/quicktype/quicktype) might help. Quicktype
+  produces output for a very large variety of languages, but its output for
+  TypeScript in particular has been found to be weakly typed. We use [a fork of
+  quicktype](https://github.com/getsentry/quicktype) to generate schema
+  documentation.
+
+## List of schemas
+
+### `relay/event.schema.json`
 
 Contains a draft-07 JSON Schema of the Event payload as accepted, validated and
 understood by Relay. The schema is automatically updated when `master` in
