@@ -18,7 +18,7 @@ This is a collection of shared data schema definitions across Sentry's services.
   devs to produce decent type definitions.
 - For consuming JSON Schema in TypeScript,
   [json-schema-to-typescript](https://github.com/bcherny/json-schema-to-typescript)
-  is recomended.
+  is recommended.
 - In other situations, setting up something based on
   [quicktype](https://github.com/quicktype/quicktype) might help. Quicktype
   produces output for a very large variety of languages, but its output for
