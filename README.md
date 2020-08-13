@@ -16,15 +16,17 @@ Right now the best way to use this repo is to include it as a submodule in your
 project and set up [Dependabot to periodically update
 `HEAD`](https://dependabot.com/submodules/), then use the following tools:
 
-- For consuming JSON Schema in Python,
+- For consuming JSON Schema as Python type hints,
   [jsonschema-typed](https://github.com/inspera/jsonschema-typed)
   (`jsonschema-typed-v2` on PyPI) is recommended. It has been found by Snuba
   devs to produce decent type definitions.
-- For consuming JSON Schema in TypeScript,
+- For consuming JSON Schema as TypeScript type definitions,
   [json-schema-to-typescript](https://github.com/bcherny/json-schema-to-typescript)
   is recommended.
-- In other situations, setting up something based on
-  [quicktype](https://github.com/quicktype/quicktype) might help. Quicktype
+- Using a JSON Schema validation library in your SDK's test suite can help find
+  inconsistencies between what you send and what the server accepts.
+- Setting up something based on
+  [quicktype](https://github.com/quicktype/quicktype) might work. Quicktype
   produces output for a very large variety of languages, but its output for
   TypeScript in particular has been found to be weakly typed. We use [a fork of
   quicktype](https://github.com/getsentry/quicktype) to generate schema
