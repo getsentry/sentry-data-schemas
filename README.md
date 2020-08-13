@@ -12,6 +12,10 @@ This is a collection of shared data schema definitions across Sentry's services.
 
 ## Consuming schemas
 
+Right now the best way to use this repo is to include it as a submodule in your
+project and set up [Dependabot to periodically update
+`HEAD`](https://dependabot.com/submodules/), then use the following tools:
+
 - For consuming JSON Schema in Python,
   [jsonschema-typed](https://github.com/inspera/jsonschema-typed)
   (`jsonschema-typed-v2` on PyPI) is recommended. It has been found by Snuba
