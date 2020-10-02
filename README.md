@@ -31,6 +31,10 @@ project and set up [Dependabot to periodically update
   TypeScript in particular has been found to be weakly typed. We use [a fork of
   quicktype](https://github.com/getsentry/quicktype) to generate schema
   documentation.
+  
+That said, packaging and tooling is a neverending work in progress, so if
+you're going to start consuming this schema, do make sure to ask around if
+anything has changed since the last time this document was updated.
 
 ## List of schemas
 
