@@ -1,0 +1,2 @@
+include sentry_data_schemas/event.schema.json
+include sentry_data_schemas/py.typed

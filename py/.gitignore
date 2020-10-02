@@ -1,0 +1,7 @@
+sentry_data_schemas/event.schema.json
+
+# Wheels
+dist
+build
+*.egg-info
+.eggs
