@@ -36,5 +36,5 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     include_package_data=True,
     install_requires=get_requirements(),
-    python_requires='>=3.8',
+    python_requires='>=3.7', # The minimum required by jsonschema-typed
 )
