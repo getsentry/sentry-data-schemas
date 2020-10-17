@@ -10,6 +10,12 @@ if os.path.isfile("../relay/event.schema.json"):
         "./sentry_data_schemas/event.schema.json"
     )
 
+if os.path.isfile("../LICENSE"):
+    shutil.copyfile(
+        "../LICENSE",
+        "./LICENSE"
+    )
+
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
@@ -17,8 +23,8 @@ setuptools.setup(
     name="sentry-data-schemas",
     version="0.0.1",
     author="Sentry",
-    license="BSL-1.1",
-    author_email="hello@sentry.io",
+    license="MIT",
+    author_email="oss@sentry.io",
     description="Sentry shared data schemas",
     long_description=long_description,
     long_description_content_type="text/markdown",
