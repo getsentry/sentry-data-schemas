@@ -2,6 +2,10 @@ import os
 import setuptools
 import shutil
 
+def get_requirements():
+    with open(u"requirements.txt") as fp:
+        return [x.strip() for x in fp.read().split("\n") if not x.startswith("#")]
+
 # Copies the schema in the module so that setuptools is able to
 # find the file and add it to the package.
 if os.path.isfile("../relay/event.schema.json"):
@@ -31,8 +35,6 @@ setuptools.setup(
     url="https://github.com/getsentry/sentry-data-schemas",
     packages=setuptools.find_packages(),
     include_package_data=True,
-    install_requires=[
-        "jsonschema-typed-v2==0.8.0"
-    ],
+    install_requires=get_requirements(),
     python_requires='>=3.8',
 )
