@@ -1,1 +1,11 @@
 .venv
+
+# Files copied here by setup.py
+py/sentry_data_schemas/event.schema.json
+py/LICENSE
+
+# Wheels
+py/dist
+py/build
+py/*.egg-info
+py/.eggs

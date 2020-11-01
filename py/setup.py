@@ -37,4 +37,11 @@ setuptools.setup(
     include_package_data=True,
     install_requires=get_requirements(),
     python_requires='>=3.7', # The minimum required by jsonschema-typed
+    classifiers={
+        "Intended Audience :: Developers",
+        "Operating System :: POSIX :: Linux",
+        "Programming Language :: Python :: 3.7",
+        "Topic :: Software Development",
+        "License :: MIT",
+    }
 )
