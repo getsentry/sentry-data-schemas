@@ -5,20 +5,29 @@ import shutil
 def get_requirements():
     with open(u"requirements.txt") as fp:
         return [x.strip() for x in fp.read().split("\n") if not x.startswith("#")]
+    
 
 # Copies the schema in the module so that setuptools is able to
 # find the file and add it to the package.
-#if os.path.isfile("../relay/event.schema.json"):
-shutil.copyfile(
-    "../relay/event.schema.json",
-    "./sentry_data_schemas/event.schema.json"
-)
-
-#if os.path.isfile("../LICENSE"):
-shutil.copyfile(
-    "../LICENSE",
-    "./LICENSE"
-)
+#
+# We need to check if the file is present before running the copy
+# because, depending where the package is imported from the file
+# may or may not be there.
+# When producing the distribution, the file is copied into the 
+# distribution.
+# When importing from a distribution the copy must be skipped since
+# the file is already in the right place and the source is not
+# available.
+if os.path.isfile("../relay/event.schema.json"):
+    shutil.copyfile(
+        "../relay/event.schema.json",
+        "./sentry_data_schemas/event.schema.json"
+    )
+if os.path.isfile("../LICENSE"):
+    shutil.copyfile(
+        "../LICENSE",
+        "./LICENSE"
+    )
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
