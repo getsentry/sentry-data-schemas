@@ -18,6 +18,9 @@ def get_requirements():
 # When importing from a distribution the copy must be skipped since
 # the file is already in the right place and the source is not
 # available.
+#
+# TODO: Try to perform this copy only when building the distribution
+# by extending the sdist command.
 if os.path.isfile("../relay/event.schema.json"):
     shutil.copyfile(
         "../relay/event.schema.json",
