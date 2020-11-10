@@ -51,7 +51,7 @@ setuptools.setup(
     python_requires='>=3.7', # The minimum required by jsonschema-typed
     classifiers={
         "Intended Audience :: Developers",
-        "Operating System :: POSIX :: Linux",
+        "Operating System :: OS Independent",
         "Programming Language :: Python :: 3.7",
         "Topic :: Software Development",
         "License :: MIT",
