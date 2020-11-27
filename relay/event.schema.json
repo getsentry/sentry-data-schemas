@@ -874,6 +874,9 @@
           "$ref": "#/definitions/ProguardDebugImage"
         },
         {
+          "$ref": "#/definitions/NativeDebugImage"
+        },
+        {
           "type": "object",
           "additionalProperties": true
         }
@@ -1302,6 +1305,14 @@
                 {
                   "type": "null"
                 }
+              ]
+            },
+            "addr_mode": {
+              "description": " Defines the addressing mode for addresses.",
+              "default": null,
+              "type": [
+                "string",
+                "null"
               ]
             },
             "colno": {
@@ -1920,9 +1931,7 @@
           "type": "object",
           "required": [
             "code_file",
-            "debug_id",
-            "image_addr",
-            "image_size"
+            "debug_id"
           ],
           "properties": {
             "arch": {
@@ -1981,6 +1990,7 @@
             },
             "image_addr": {
               "description": " Starting memory address of the image (required).\n\n Memory address, at which the image is mounted in the virtual address space of the process. Should be a string in hex representation prefixed with `\"0x\"`.",
+              "default": null,
               "anyOf": [
                 {
                   "$ref": "#/definitions/Addr"
@@ -1992,6 +2002,7 @@
             },
             "image_size": {
               "description": " Size of the image in bytes (required).\n\n The size of the image in virtual memory. If missing, Sentry will assume that the image spans up to the next image, which might lead to invalid stack traces.",
+              "default": null,
               "type": [
                 "integer",
                 "null"
