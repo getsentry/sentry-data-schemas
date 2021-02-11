@@ -1892,6 +1892,18 @@
                 }
               ]
             },
+            "ns_error": {
+              "description": " An NSError on Apple systems comprising code and signal.",
+              "default": null,
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/NsError"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
             "signal": {
               "description": " Information on the POSIX signal.",
               "default": null,
@@ -2031,6 +2043,33 @@
       "anyOf": [
         {
           "type": "string"
+        }
+      ]
+    },
+    "NsError": {
+      "description": " NSError informaiton.",
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "code": {
+              "description": " The error code.",
+              "default": null,
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
+            },
+            "domain": {
+              "description": " A string containing the error domain.",
+              "default": null,
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
         }
       ]
     },
