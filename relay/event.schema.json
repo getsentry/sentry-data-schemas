@@ -45,7 +45,7 @@
           ]
         },
         "culprit": {
-          "description": " Custom culprit of the event.",
+          "description": " Custom culprit of the event.\n\n This field is deprecated and shall not be set by client SDKs.",
           "default": null,
           "type": [
             "string",
