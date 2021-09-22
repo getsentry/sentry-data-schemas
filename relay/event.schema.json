@@ -2723,6 +2723,15 @@
             "trace_id"
           ],
           "properties": {
+            "exclusive_time": {
+              "description": " The amount of time in milliseconds spent in this transaction span,\n excluding its immediate child spans.",
+              "default": null,
+              "type": [
+                "number",
+                "null"
+              ],
+              "format": "double"
+            },
             "op": {
               "description": " Span type (see `OperationType` docs).",
               "default": null,
