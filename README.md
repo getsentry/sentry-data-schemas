@@ -42,7 +42,11 @@ anything has changed since the last time this document was updated.
 
 Contains a draft-07 JSON Schema of the Event payload as accepted, validated and
 understood by Relay. The schema is automatically updated when `master` in
-`getsentry/relay` is committed to.
+`getsentry/relay` is committed to. Current consumers are:
+
+- [Docs page about event schema](https://develop.sentry.dev/sdk/event-payloads/types/)
+- [WIP PR for adding types to Snuba consumer](https://github.com/getsentry/snuba/pull/1192)
+- [The testsuite for Python SDK uses the schema to validate its own events](https://github.com/getsentry/sentry-python)
 
 Following caveats apply:
 
