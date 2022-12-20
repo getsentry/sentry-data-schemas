@@ -3223,6 +3223,7 @@
         "route",
         "view",
         "component",
+        "sanitized",
         "task",
         "unknown"
       ]
