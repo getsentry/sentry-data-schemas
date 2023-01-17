@@ -823,6 +823,9 @@
           "$ref": "#/definitions/TraceContext"
         },
         {
+          "$ref": "#/definitions/ProfileContext"
+        },
+        {
           "$ref": "#/definitions/MonitorContext"
         },
         {
@@ -2442,6 +2445,31 @@
                 "null"
               ],
               "format": "int64"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "ProfileContext": {
+      "description": " Profile context",
+      "anyOf": [
+        {
+          "type": "object",
+          "required": [
+            "profile_id"
+          ],
+          "properties": {
+            "profile_id": {
+              "description": " The profile ID.",
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/EventId"
+                },
+                {
+                  "type": "null"
+                }
+              ]
             }
           },
           "additionalProperties": false
