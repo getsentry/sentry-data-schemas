@@ -3307,6 +3307,14 @@
                 "null"
               ]
             },
+            "origin": {
+              "description": " The origin of the trace indicates what created the trace (see [OriginType] docs).",
+              "default": null,
+              "type": [
+                "string",
+                "null"
+              ]
+            },
             "parent_span_id": {
               "description": " The ID of the span enclosing this span.",
               "default": null,
