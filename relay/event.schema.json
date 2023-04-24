@@ -1787,6 +1787,14 @@
                 "string",
                 "null"
               ]
+            },
+            "subdivision": {
+              "description": " Human readable subdivision name.",
+              "default": null,
+              "type": [
+                "string",
+                "null"
+              ]
             }
           },
           "additionalProperties": false
