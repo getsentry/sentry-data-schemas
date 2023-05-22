@@ -3431,6 +3431,14 @@
                 }
               ]
             },
+            "sampled": {
+              "description": " Track whether the trace connected to this event has been sampled entirely.\n\n This flag only applies to events with [`Error`] type that have an associated dynamic sampling context.",
+              "default": null,
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
             "span_id": {
               "description": " The ID of the span.",
               "anyOf": [
