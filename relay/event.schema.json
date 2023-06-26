@@ -2892,7 +2892,7 @@
               "additionalProperties": true
             },
             "fragment": {
-              "description": " The fragment of the request URL.",
+              "description": " The fragment of the request URI.",
               "default": null,
               "type": [
                 "string",
