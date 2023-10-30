@@ -910,6 +910,9 @@
           "$ref": "#/definitions/ReplayContext"
         },
         {
+          "$ref": "#/definitions/UserReportV2Context"
+        },
+        {
           "$ref": "#/definitions/MonitorContext"
         },
         {
@@ -1488,6 +1491,7 @@
         "expectct",
         "expectstaple",
         "transaction",
+        "userreportv2",
         "default"
       ]
     },
@@ -3759,6 +3763,33 @@
             },
             "username": {
               "description": " Username of the user.",
+              "default": null,
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "UserReportV2Context": {
+      "description": " Feedback context.\n\n This contexts contains user feedback specific attributes.\n We don't PII scrub contact_email as that is provided by the user.\n TODO(jferg): rename to FeedbackContext once old UserReport logic is deprecated.",
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "contact_email": {
+              "description": " an email optionally provided by the user, which can be different from user.email",
+              "default": null,
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "message": {
+              "description": " The feedback message which contains what the user has to say.",
               "default": null,
               "type": [
                 "string",
