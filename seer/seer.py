@@ -2,6 +2,24 @@ import typing
 
 import typing_extensions
 
+AutofixEndpointResponse = typing_extensions.TypedDict(
+    "AutofixEndpointResponse",
+    {
+        "started": bool,
+    },
+    total=False,
+)
+
+AutofixRequest = typing_extensions.TypedDict(
+    "AutofixRequest",
+    {
+        "issue": "IssueDetails",
+        "base_commit_sha": str,
+        "additional_context": typing.Union[str, None],
+    },
+    total=False,
+)
+
 BreakpointEntry = typing_extensions.TypedDict(
     "BreakpointEntry",
     {
@@ -62,6 +80,50 @@ BreakpointTransaction = typing_extensions.TypedDict(
     total=False,
 )
 
+GroupingRequest = typing_extensions.TypedDict(
+    "GroupingRequest",
+    {
+        "group_id": int,
+        "project_id": int,
+        "stacktrace": str,
+        "message": str,
+        # default: 1
+        "k": int,
+        # default: 0.99
+        "threshold": float,
+    },
+    total=False,
+)
+
+GroupingResponse = typing_extensions.TypedDict(
+    "GroupingResponse",
+    {
+        "parent_group_id": typing.Union[int, None],
+        "stacktrace_similarity": float,
+        "message_similarity": float,
+        "should_group": bool,
+    },
+    total=False,
+)
+
+IssueDetails = typing_extensions.TypedDict(
+    "IssueDetails",
+    {
+        "id": int,
+        "title": str,
+        "events": typing.List["SentryEvent"],
+    },
+    total=False,
+)
+
+SentryEvent = typing_extensions.TypedDict(
+    "SentryEvent",
+    {
+        "entries": typing.List[typing.Mapping[str, typing.Any]],
+    },
+    total=False,
+)
+
 SeverityRequest = typing_extensions.TypedDict(
     "SeverityRequest",
     {
@@ -86,10 +148,18 @@ SeverityResponse = typing_extensions.TypedDict(
     total=False,
 )
 
+SimilarityResponse = typing_extensions.TypedDict(
+    "SimilarityResponse",
+    {
+        "responses": typing.List["GroupingResponse"],
+    },
+    total=False,
+)
+
 SnubaMetadata = typing_extensions.TypedDict(
     "SnubaMetadata",
     {
-        "count": int,
+        "count": float,
     },
     total=False,
 )
