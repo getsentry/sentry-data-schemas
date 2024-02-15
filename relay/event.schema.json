@@ -3251,6 +3251,14 @@
         {
           "type": "object",
           "properties": {
+            "name": {
+              "description": " The name of the route.",
+              "default": null,
+              "type": [
+                "string",
+                "null"
+              ]
+            },
             "params": {
               "description": " Parameters assigned to this route.",
               "default": null,
