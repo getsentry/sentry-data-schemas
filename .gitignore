@@ -2,6 +2,10 @@
 
 # Files copied here by setup.py
 py/sentry_data_schemas/event.schema.json
+py/sentry_data_schemas/events.py
+py/sentry_data_schemas/seer.py
+py/sentry_data_schemas/seer_api.json
+py/MANIFEST.in
 py/LICENSE
 
 # Wheels
@@ -9,3 +13,8 @@ py/dist
 py/build
 py/*.egg-info
 py/.eggs
+
+.idea
+
+
+

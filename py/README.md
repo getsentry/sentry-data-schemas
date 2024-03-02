@@ -1,8 +1,9 @@
-# Sentry Data Schemas
+# Sentry service data schemas
 
-Mypy types corresponding to the jsonschemas in the Sentry Data Schemas
-repository.
+## events.py + event.schema.json
 
-## Using the schemas
+Related to relay events, from json schema.
 
-Import this module and use the types in the sentry_data_schemas module.
+## seer.py + seer_api.json
+
+Related to the sentry ML service seer, from openapi.

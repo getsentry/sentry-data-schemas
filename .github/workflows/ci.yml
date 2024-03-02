@@ -1,0 +1,28 @@
+on:
+  push:
+    branches:
+      - 'release/**'
+
+
+jobs:
+  build_sentry_data_schemas:
+    name: Build sentry_data_schemas Package
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+      - name: Build Packages
+        run: |
+          pip install wheel setuptools
+          cd py
+          python setup.py sdist bdist_wheel
+      - name: Upload Python Packages
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ github.sha }}
+          path: |
+            py/dist/*
